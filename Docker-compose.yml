@@ -1,0 +1,14 @@
+name: Dice Roller Compose Stack
+
+services:
+  api:
+    image: mysupercooldiceroller:latest-${NODE_ENV:-production}
+    build:
+      context: .
+      args:
+        - NODE_ENV:bananas
+    env_file: .env
+    environment:
+      - SOMEOTHERENVVARIABLE=SOMEVALUEHERE
+    ports:
+      - 3500:3000
