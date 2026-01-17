@@ -28,7 +28,7 @@ jobs:
 
     - name: Check secret key
       run: echo ${{ secrets.EXAMPLESECRET }}
-      
+
     - name: get the image version tag from either dispatch or ref
       run: |
         echo "VERSION_TAG=${ACTIVE_TAG,,}" >>${GITHUB_ENV}
@@ -65,3 +65,6 @@ jobs:
         tags: |
           ghcr.io/${{env.REPO_LC}}:latest
           ghcr.io/${{env.REPO_LC}}:${{env.VERSION_TAG}}
+        secrets: |
+          "github_token=${{ secrets.GITHUB_TOKEN }}"
+    

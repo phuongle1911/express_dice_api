@@ -12,3 +12,10 @@ services:
       - SOMEOTHERENVVARIABLE=SOMEVALUEHERE
     ports:
       - 3500:3000
+
+  # downloaded:
+  #   image: 
+  #   ports:
+  #     - 3501:3000
+  #   environment:
+  #     - JWT_SECRET_KEY: 
